@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns= "http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html">
+
+	<head>
+	<title><ui:insert name="PageTitle">Test Response</ui:insert></title>
+	</head>
+	
+<body>
+<ui:composition template="/layouts/commonLayouts.xhtml">
+	<h1>Response Page</h1>
+	<p>Hello #{user.firstName}, I hope you are doing well.</p>
+	<p>I believe your last name is #{user.lastName} </p>
+	<p>
+	<h:form>
+	<h:commandButton action="#{formController.onSendOrder()}" value="Send Order"></h:commandButton>
+	<h:commandButton action="login-form.xhtml" value="Login Out"/>
+	</h:form>
+	</p>
+	</ui:composition>
+	
+
+</body>
+	
+
+
+
+
+</html>

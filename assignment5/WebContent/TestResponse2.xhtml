@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns= "http://www.w3.org/1999/xhtml"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:h="http://java.sun.com/jsf/html">
+
+	<head>
+	<title><ui:insert name="PageTitle">Test Response</ui:insert></title>
+	</head>
+	
+<body>
+	<h1>Response Page</h1>
+	<p>Hello #{flash.user.firstName}, I hope you are doing well.</p>
+	<p>I believe your last name is #{flash.user.lastName} </p>
+	<h:commandButton action="#{user.onFlash()}" value="Flash"/>
+
+</body>
+	
+
+
+
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+<title><ui:insert name="PageTitle">Page Title</ui:insert></title>
+<style type="">
+.order-table {
+	border: 1px black solid;
+	background: #EEE
+}
+
+.order-table-odd {
+	background:
+}
+
+.order-table-header {
+	font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+	<h1>Response Page
+		http://localhost:8080/Assignment_2b/rest/orders/getjson</h1>
+	<p>Hello #{user.firstName}, Your orders are:</p>
+	<p>
+		<h:commandButton action="#{formController.onSendOrder()}"
+			value="Send Order"></h:commandButton>
+		<h:commandButton action="#{formController.onLogoff}" value="Log Out" />
+	</p>
+	<h:dataTable value="#{orders.order}" var="o" styleClass="order-table"
+		headerClass="order-header-table"
+		rowClass="order-table-odd, order-table-even">
+
+		<h:column>
+			<f:facet name="header">Order number</f:facet>
+			#{o.orderNo}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Poduct Name</f:facet>
+			#{o.productName}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Price</f:facet>
+			#{o.price}
+		</h:column>
+		<h:column>
+			<f:facet name="header">Quantity</f:facet>
+			#{o.quantity}
+		</h:column>
+
+
+	</h:dataTable>
+
+
+</body>
+
+
+
+
+
+</html>
